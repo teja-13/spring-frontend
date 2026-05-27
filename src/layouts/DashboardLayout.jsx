@@ -1,0 +1,10 @@
+import Navbar from '../components/Navbar.jsx'
+
+const DashboardLayout = ({ children }) => (
+  <div className="min-h-screen bg-slate-50">
+    <Navbar />
+    <main className="mx-auto w-full max-w-6xl px-6 py-8">{children}</main>
+  </div>
+)
+
+export default DashboardLayout
