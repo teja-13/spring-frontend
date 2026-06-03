@@ -37,6 +37,9 @@ const TransactionForm = ({ categories, onSubmit, initialValues, onCancel }) => {
     })
   }
 
+  // Filter categories by the selected transaction type
+  const filteredCategories = categories.filter((category) => category.type === form.type)
+
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 md:grid-cols-2">
@@ -79,7 +82,7 @@ const TransactionForm = ({ categories, onSubmit, initialValues, onCancel }) => {
             <option value="" disabled>
               Select category
             </option>
-            {categories.map((category) => (
+            {filteredCategories.map((category) => (
               <option key={category.id} value={category.name}>
                 {category.name}
               </option>
